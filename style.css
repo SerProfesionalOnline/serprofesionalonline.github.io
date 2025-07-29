@@ -1369,3 +1369,15 @@ main > .content-section:has(.quien-grid) {
 .pricing-card {
     margin: 0 !important; /* Anula cualquier margen individual que cause el desajuste */
 }
+/* --- Estilo para botón principal en Link en Bio --- */
+.leb-buttons .button-principal {
+    background-color: var(--color-accent-terracotta);
+    color: #fff !important;
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+.leb-buttons .button-principal:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    filter: brightness(1.1);
+}
