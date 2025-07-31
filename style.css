@@ -1417,3 +1417,12 @@ html, body {
   overflow-x: hidden;
   width: 100%;
 }
+/* --- Arreglo definitivo para menú en móviles --- */
+@media (max-width: 991px) {
+    .desktop-cta {
+        display: none;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+}
