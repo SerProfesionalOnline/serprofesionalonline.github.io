@@ -1390,3 +1390,32 @@ main > .content-section:has(.quien-grid) {
     display: block;
   }
 }
+/* ======================================= */
+/* ARREGLO FINAL PARA MENÚ EN MÓVILES      */
+/* ======================================= */
+
+/* Reglas para pantallas de celular y tablet (pequeñas) */
+@media (max-width: 991px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .desktop-cta {
+    display: none !important;
+  }
+  .hamburger-menu {
+    display: block !important;
+  }
+}
+
+/* Reglas para pantallas de escritorio (grandes) */
+@media (min-width: 992px) {
+  .desktop-nav {
+    display: block !important;
+  }
+  .desktop-cta {
+    display: inline-block !important; /* Usamos inline-block para que se vea bien al lado del menú */
+  }
+  .hamburger-menu {
+    display: none !important;
+  }
+}
