@@ -41,7 +41,7 @@ h2 { font-size: clamp(1.8rem, 4vw, 2.2rem); font-weight: 700; }
 h3 { font-size: clamp(1.5rem, 3.5vw, 1.8rem); font-weight: 700; }
 
 
-/* --- Header y Navegación (Estilo Original Restaurado) --- */
+/* --- Header y Navegación (CORREGIDO) --- */
 .header-global {
     background-color: rgba(247, 243, 233, 0.9);
     backdrop-filter: blur(10px);
@@ -52,7 +52,11 @@ h3 { font-size: clamp(1.5rem, 3.5vw, 1.8rem); font-weight: 700; }
     top: 0;
     z-index: 1000;
 }
-.header-content { display: flex; justify-content: space-between; align-items: center; }
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .header-global .logo a {
     font-family: 'Manrope', sans-serif;
     font-weight: 700;
@@ -62,48 +66,48 @@ h3 { font-size: clamp(1.5rem, 3.5vw, 1.8rem); font-weight: 700; }
     text-transform: lowercase;
     letter-spacing: -0.03em;
 }
-.desktop-nav { display: none; }
-@media (min-width: 992px) { .desktop-nav { display: block; } }
-.header-global nav ul {
-    list-style: none; margin: 0; padding: 0; display: flex; align-items: center;
-}
-.header-global nav ul li {
-    margin-left: 25px; position: relative;
-}
-/* Restauración de los puntos separadores del menú */
-.header-global nav ul li:not(:last-child)::after {
-    content: '•';
-    position: absolute;
-    right: -15px;
-    color: #DDC8A4; /* Color sutil del punto */
-    font-size: 0.8em;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.header-global nav ul li a {
-    font-family: 'Manrope', sans-serif; font-size: 1em; font-weight: 500;
-    color: var(--color-text-dark); text-decoration: none; position: relative;
-    transition: color 0.3s ease; text-transform: lowercase;
-}
-.header-global nav ul li a:hover { color: var(--color-accent-terracotta); }
-.header-global nav ul li a::after {
-    content: ''; position: absolute; width: 0; height: 2px;
-    bottom: -5px; left: 0; background-color: var(--color-accent-terracotta);
-    transition: width 0.3s ease;
-}
-.header-global nav ul li a:hover::after { width: 100%; }
-.desktop-cta { margin-left: 30px; }
 
-/* Menú hamburguesa */
-.hamburger-menu { display: block; font-size: 1.8em; cursor: pointer; color: var(--color-text-dark); }
-@media (min-width: 992px) { .hamburger-menu { display: none; } }
+/* --- ESTADO POR DEFECTO: VISTA MÓVIL --- */
+.desktop-nav, .desktop-cta {
+    display: none; /* Ocultos en móvil por defecto */
+}
+.hamburger-menu {
+    display: block; /* Visible en móvil por defecto */
+    font-size: 1.8em;
+    cursor: pointer;
+    color: var(--color-text-dark);
+}
+
+/* --- ESTADO PARA PANTALLAS GRANDES --- */
+@media (min-width: 992px) {
+    .desktop-nav {
+        display: block; /* Se muestra en escritorio */
+    }
+    .desktop-cta {
+        display: inline-block; /* Se muestra en escritorio */
+        margin-left: 30px;
+    }
+    .hamburger-menu {
+        display: none; /* Se oculta en escritorio */
+    }
+}
+
+/* --- ESTILOS DEL MENÚ (SIN CAMBIOS) --- */
+.header-global nav ul { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; }
+.header-global nav ul li { margin-left: 25px; position: relative; }
+.header-global nav ul li:not(:last-child)::after { content: '•'; position: absolute; right: -15px; color: #DDC8A4; font-size: 0.8em; top: 50%; transform: translateY(-50%); }
+.header-global nav ul li a { font-family: 'Manrope', sans-serif; font-size: 1em; font-weight: 500; color: var(--color-text-dark); text-decoration: none; position: relative; transition: color 0.3s ease; text-transform: lowercase; }
+.header-global nav ul li a:hover { color: var(--color-accent-terracotta); }
+.header-global nav ul li a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background-color: var(--color-accent-terracotta); transition: width 0.3s ease; }
+.header-global nav ul li a:hover::after { width: 100%; }
+
+/* --- MENÚ DESPLEGABLE MÓVIL --- */
 .mobile-nav { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--color-bg-light); flex-direction: column; align-items: center; justify-content: center; z-index: 1001; transition: transform 0.4s ease-in-out; transform: translateX(100%); }
 .mobile-nav.is-active { transform: translateX(0); display: flex; }
 .mobile-nav ul { list-style: none; padding: 0; text-align: center; }
 .mobile-nav ul li { margin: 25px 0; }
 .mobile-nav ul li a { font-size: 1.8em; color: var(--color-text-dark); text-decoration: none; text-transform: lowercase; font-family: 'Manrope', sans-serif; font-weight: 600; }
 .mobile-nav .close-btn { position: absolute; top: 20px; right: 25px; font-size: 2.2em; cursor: pointer; color: var(--color-text-dark); }
-
 /* --- Botones --- */
 .button { display: inline-block; padding: 15px 35px; background-color: var(--color-accent-terracotta); color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700; transition: background-color 0.3s ease, transform 0.2s ease; border: none; cursor: pointer; }
 .button:hover { background-color: var(--color-accent-red); transform: translateY(-3px); }
