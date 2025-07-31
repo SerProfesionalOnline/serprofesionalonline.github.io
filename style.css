@@ -1419,3 +1419,10 @@ main > .content-section:has(.quien-grid) {
     display: none !important;
   }
 }
+/* ======================================= */
+/* ARREGLO FINAL DE DESBORDE EN MÓVILES    */
+/* ======================================= */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
