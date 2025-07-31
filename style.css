@@ -1426,3 +1426,38 @@ html, body {
     overflow-x: hidden;
     width: 100%;
 }
+/* ======================================= */
+/* ARREGLO DEFINITIVO Y TOTAL PARA MENÚS   */
+/* ======================================= */
+
+/* Reglas para pantallas de celular y tablet */
+@media (max-width: 991px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .desktop-cta {
+    display: none !important;
+  }
+  .hamburger-menu {
+    display: block !important;
+  }
+}
+
+/* Reglas para pantallas de escritorio */
+@media (min-width: 992px) {
+  .desktop-nav {
+    display: block !important;
+  }
+  .desktop-cta {
+    display: block !important;
+  }
+  .hamburger-menu {
+    display: none !important;
+  }
+}
+
+/* Arreglo final para desborde y franja blanca */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
