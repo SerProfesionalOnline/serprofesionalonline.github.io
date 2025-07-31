@@ -1272,8 +1272,8 @@ main > .content-section:has(.quien-grid) {
 /* 1. SISTEMA DE ESPACIADO VERTICAL (Soluciona los "espacios brutales") */
 /* Se establece un padding consistente para todas las secciones principales de la página */
 .page-impulso-inicial main > section {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     border-bottom: 1px solid #EAE6E1; /* Un sutil separador de secciones */
 }
 /* Se elimina el borde de la última sección para una transición limpia al footer */
